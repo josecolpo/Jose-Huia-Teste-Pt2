@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Max Doctor</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
+	<link rel="icon" type="image/png" href="assets/images/logo.png" />
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+	<section class="page-header header-filter">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto" style="max-width:290px;">
+					<form class="form" onsubmit="return check()">
+						<div class="card" style="text-align:center;">
+							<span class="modal-content" id="avisoSucesso">
+								<div class="modal-header">
+									<h2 class="modal-title header-title">Sucesso</h5>
+									<button class="modal-close" onclick="aviso(2,0)" type="button">
+										<span aria-hidden="true">×</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p class="benefits-title" style="color: grey;">Você está sendo redirecionado...</p>
+								</div>
+							</span>
+							<header style="padding-top:20px;">
+								<div class="row">
+									<figure class="col">
+										<img class="header-logo" src="assets/images/logo.png" alt="logotipo max doctor">
+									</figure>
+									<div class="col">
+										<h1 class="header-title">a plataforma de compra direta do seu anestésico tópico</h1>
+									</div>
+								</div>
+							</header>
+							<main class="row" style="padding-top: 30px;">
+								<div class="col">
+									<div class="row">
+										<fieldset class="col">
+											<div style="display:flex">
+												<legend class="input-label">
+													<label class="input-description">CRM</label>
+												</legend>
+												<input class="input" onkeypress="mask(this, 0)" onfocusout="mask(this, 0)" name="crm" maxlength="9" placeholder="000.000-0" type="text" required="">
+											</div>
+										</fieldset>
+										<span class="col notice-container" id="avisoCrm">
+											<p class="notice-description">CRM inválido</p>
+										</span>
+									</div>
+								</div>
+								<div class="col" style="padding-top:15px;">
+									<div class="row">
+										<fieldset class="col">
+											<div style="display:flex">
+												<legend class="input-label">
+													<label class="input-description">UF</label>
+												</legend>
+												<div class="select">
+													<select class="input uf" onchange="mask(this, 1)" placeholder="Selecionar" name="uf" required="">
+														<option selected="" disabled="" hidden="">Selecionar</option>
+														<option class="select-option" value="1">AC</option>
+														<option class="select-option" value="2">AL</option>
+														<option class="select-option" value="3">AM</option>
+														<option class="select-option" value="4">AP</option>
+														<option class="select-option" value="5">BA</option>
+														<option class="select-option" value="6">CE</option>
+														<option class="select-option" value="7">DF</option>
+														<option class="select-option" value="8">ES</option>
+														<option class="select-option" value="9">GO</option>
+														<option class="select-option" value="10">MA</option>
+														<option class="select-option" value="11">MG</option>
+														<option class="select-option" value="12">MS</option>
+														<option class="select-option" value="13">MT</option>
+														<option class="select-option" value="14">PA</option>
+														<option class="select-option" value="15">PB</option>
+														<option class="select-option" value="16">PE</option>
+														<option class="select-option" value="17">PI</option>
+														<option class="select-option" value="18">PR</option>
+														<option class="select-option" value="19">RJ</option>
+														<option class="select-option" value="20">RN</option>
+														<option class="select-option" value="21">RO</option>
+														<option class="select-option" value="22">RR</option>
+														<option class="select-option" value="23">RS</option>
+														<option class="select-option" value="24">SC</option>
+														<option class="select-option" value="25">SE</option>
+														<option class="select-option" value="26">SP</option>
+														<option class="select-option" value="27">TO</option>
+													</select>
+												</div>
+											</div>
+										</fieldset>
+										<span class="col notice-container" id="avisoUf">
+											<p class="notice-description">Opção UF inválida</p>
+										</span>
+									</div>
+								</div>
+								<div class="col" style="padding-top:20px;">
+									<button>continue</button>
+								</div>
+							</main>
+							<footer>
+								<h2 class="benefits-title">canal de compra exclusivo<br>para classe médica</h2>
+								<div class="row" style="padding-top: 40px;">
+									<div class="col benefits-col">
+										<figure style="margin-right: 0px;">
+											<img class="benefits-img" src="assets/images/facilidade.png" alt="facilidade de compra">
+											<figcaption class="benefits-description">facilidade de compra</figcaption>
+										</figure>
+										<figure>
+											<img class="benefits-img" src="assets/images/quantidade.png" alt="quantidade não limitada">
+											<figcaption class="benefits-description">quantidade não limitada</figcaption>
+										</figure>
+									</div>
+									<div class="col benefits-col" style="padding-top:15px;">
+										<figure class="benefits-margin">
+											<img class="benefits-img" src="assets/images/frete.png" alt="frete grátis">
+											<figcaption class="benefits-description">frete grátis</figcaption>
+										</figure>
+										<figure class="benefits-margin">
+											<img class="benefits-img" src="assets/images/agilidade.png" alt="agilidade">
+											<figcaption class="benefits-description">agilidade</figcaption>
+										</figure>
+										<figure>
+											<img class="benefits-img" src="assets/images/comodidade.png" alt="comodidade">
+											<figcaption class="benefits-description">comodidade</figcaption>
+										</figure>
+									</div>
+								</div>
+							</footer>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
